@@ -1,0 +1,13 @@
+<%= form_with(model: [@crafter, @crafter.gears.build ], local: true) do |form| %>
+<p>
+    <%= form.label :gear_name %><br>
+    <%= form.text_field :gear_name %>
+</p>
+<p>
+    <%= form.label :gear_rarity %><br>
+    <%= form.text_field :gear_rarity %>
+</p>
+<p>
+    <%= form.submit class: "waves-effect waves-light btn deep-purple lighten-3" %>
+</p>
+<% end %>

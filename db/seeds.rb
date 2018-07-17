@@ -7,21 +7,50 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #clear the table before we seed
-Pokemon.destroy_all
 
-json = ActiveSupport::JSON.decode(File.read('db/pokedex.json'))
+Crafter.destroy_all
 
-json['pokemon'].each do |item|
-  new_pokemon = Pokemon.new
-  new_pokemon.num = item['num']
-  new_pokemon.name = item['name']
-  new_pokemon.img = item['img']
-  new_pokemon.height = item['height']
-  new_pokemon.weight = item['weight']
-  new_pokemon.candy = item['candy']
-  new_pokemon.candy_count = item['candy_count']
-  new_pokemon.egg = item['egg']
-  new_pokemon.avg_spawns = item['avg_spawns']
-  new_pokemon.spawn_time = item['spawn_time']
-  new_pokemon.save
-end
+Crafter.create!([{
+            crafter_class: "Blacksmith",
+            short_name: "BSM",
+            img: "https://ffxiv.gamerescape.com/w/images/a/ab/Blacksmith_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Alchemist",
+            short_name: "ALC",
+            img: "https://ffxiv.gamerescape.com/w/images/c/c2/Alchemist_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Armorer",
+            short_name: "ARM",
+            img: "https://ffxiv.gamerescape.com/w/images/6/6e/Armorer_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Carpenter",
+            short_name: "CRP",
+            img: "https://ffxiv.gamerescape.com/w/images/9/99/Carpenter_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Culinarian",
+            short_name: "CUL",
+            img: "https://ffxiv.gamerescape.com/w/images/f/f2/Culinarian_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Goldsmith",
+            short_name: "GSM",
+            img: "https://ffxiv.gamerescape.com/w/images/d/de/Goldsmith_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Leatherworker",
+            short_name: "LTW",
+            img: "https://ffxiv.gamerescape.com/w/images/a/a7/Leatherworker_Icon_10.5.png"
+        },
+        {
+            crafter_class: "Weaver",
+            short_name: "WVR",
+            img: "https://ffxiv.gamerescape.com/w/images/8/89/Weaver_Icon_10.5.png"
+        }])
+
+puts "Created #{Crafter.count} crafter class"
+
+            

@@ -1,0 +1,21 @@
+<br>
+<div class="row">
+  <div class="col s1">
+        <%= image_tag @crafter.img %> 
+  </div>
+  <div class="col s1">
+    <h3><%= @crafter.short_name %></h3>
+  </div>
+  <div class="col s2">
+    <h3><%= @crafter.crafter_class %></h3>
+  </div>
+</div>
+
+<h4>Gear List</h4>
+<%= render @crafter.gears%>
+
+<h4>Add gear to the class?</h4>
+<%= render 'gears/form' %>
+<br>
+<%= link_to 'Edit', edit_crafter_path(@crafter), class: "waves-effect waves-light btn orange" %>
+<%= link_to 'Back', crafters_path, class: "waves-effect waves-light btn purple" %>

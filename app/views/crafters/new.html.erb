@@ -1,0 +1,22 @@
+<%= form_with scope: :crafter, url: crafters_path, local: true do |form| %>
+  <p>
+    <%= form.label :crafter_class %><br>
+    <%= form.text_field :crafter_class %>
+  </p>
+
+  <p>
+    <%= form.label "Abbreviation (Limit to 3 chracters)"%><br>
+    <%= form.text_field :short_name %>
+  </p>
+  <p>Get images from <a href="https://ffxiv.gamerescape.com/wiki/Dictionary_of_Icons" target="_blank">here</a></p>
+  <p>
+    <%= form.label "Image Link" %><br>
+    <%= form.text_field :img %>
+  </p>
+
+  <p>
+    <%= form.submit class: "waves-effect waves-light btn green" %>
+  </p>
+<% end %>
+<br>
+<%= link_to 'Back', crafters_path, class: "waves-effect waves-light btn blue" %>

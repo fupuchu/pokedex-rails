@@ -1,0 +1,27 @@
+<h1>Listing Crafters</h1>
+
+<%= link_to 'Create new class', new_crafter_path, class: "waves-effect waves-light btn green" %>
+
+<table class="highlight centered">
+  <thead>
+    <tr>
+      <th>Crafter Class</th>
+      <th>Short Name</th>
+      <th>Icon</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crafter.each do |crafter| %>
+      <tr>
+        <td><h5><%= crafter.crafter_class %></h5></td>
+        <td><%= crafter.short_name %></td>
+        <td><%= image_tag crafter.img %></td>
+        <td><%= link_to 'View', crafter_path(crafter), class: "waves-effect waves-light btn blue" %></td>
+        <td><%= link_to 'Edit', edit_crafter_path(crafter), class: "waves-effect waves-light btn blue" %></td>
+        <td><%= link_to 'Destroy', crafter_path(crafter), method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-light btn red"  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

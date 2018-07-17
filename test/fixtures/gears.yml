@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gear_name: MyString
+  gear_rarity: MyString
+  crafter: one
+
+two:
+  gear_name: MyString
+  gear_rarity: MyString
+  crafter: two
